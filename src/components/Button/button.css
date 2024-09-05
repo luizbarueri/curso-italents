@@ -1,0 +1,12 @@
+.button-form {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #eee;
+    outline: none;
+    border-radius: 15px;
+    border: 1px solid #e42f2f;
+    cursor: pointer;
+    color: blue;
+    width: 100px;
+
+}

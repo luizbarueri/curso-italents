@@ -1,0 +1,10 @@
+.filmes {
+    align-items: center;
+}
+
+.item-filme {
+    background-color: rgb(196, 174, 174);
+    display: flex;
+    justify-content: space-between;
+
+} 

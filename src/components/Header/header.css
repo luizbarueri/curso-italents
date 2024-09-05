@@ -1,0 +1,12 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    
+    padding: 5px;
+  }
+
+  .header h1 {
+    color: darkgoldenrod;
+    font-size: 30px;
+  }
