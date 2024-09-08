@@ -1,37 +1,31 @@
 import './App.css';
-import Saudacao from './components/Saldacao/Saldacao';
 import Header from './components/Header/Header'
 import Footer from './components/Footer/Footer';
-import Filmes from './components/Filmes/Filmes';
+import FilmesIvo from './components/Filmes/FilmesIvo';
+import Mensagem from './components/Mensagem/Mensagem';
 import Form from './components/Form/Form';
 
 function App() {
-  var idade = 18;
-  
+ 
   return (
-    <div className="principal">
-      <Header />
-      
-      <main className='main'>
-        <div className='teste'>
-           <h1>Teste</h1>
-           <h2>Idade é maio0r que 18? {idade >= 18 ?  "Sim" : "Não"}</h2>
+    <main>
+      <div className='App'>
+        <Header />
+        <div className='container'>
+          <Mensagem cor="red">
+            O melhor é ptaticar sempre.
+          </Mensagem> 
         </div>
-
-        <Saudacao />
-        <div className='item-filme'>
-          <Filmes />
-      
-        </div>
-        
+        <section>
+          <FilmesIvo />
+        </section>
         <section className='contato'>
-          <h1>Gostou, entre em contato para saber mais.</h1>
+          <h2>Gostou? Entre em contato conosco</h2>
           <Form />
         </section>
-      </main>
-     
+      </div>
       <Footer />
-    </div>
+    </main>
   );
 }
 

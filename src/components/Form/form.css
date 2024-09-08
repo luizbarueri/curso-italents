@@ -7,19 +7,13 @@
     border: 1px solid #000;
     border-radius: 10px;
     padding: 2%;
-
+    box-shadow: 10px 5px black;
 }
 
-.form .form-input {
+.form .div-botao {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    /* background-color: blueviolet; */
+    justify-content: space-around;
+    /* justify-content: space-between; */
 }
-
-.form-input label {
-    margin: 10px;
-    font-size: 12px;
-    outline: none;
-    color:#000;
-}
-

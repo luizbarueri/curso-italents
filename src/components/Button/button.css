@@ -1,12 +1,16 @@
-.button-form {
-    margin-top: 10px;
+.button {
     padding: 10px;
     background-color: #eee;
     outline: none;
     border-radius: 15px;
-    border: 1px solid #e42f2f;
     cursor: pointer;
+    background-color: rgb(74, 147, 173);
     color: blue;
-    width: 100px;
-
+    transition: .4s all;
+    width: 70px;
 }
+
+.button:hover {
+    transform: scale(1.1);
+}
+

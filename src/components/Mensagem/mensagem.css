@@ -1,0 +1,14 @@
+.mensagem {
+    width: 40%;
+    border: 1px solid rgb(30, 27, 27);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto;
+    
+}
+
+.mensagem h3 {
+    margin-right: 5px;
+}

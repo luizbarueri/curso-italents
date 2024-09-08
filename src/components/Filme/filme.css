@@ -1,0 +1,11 @@
+.filmes-lista .filme-item {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.filmes-lista .filme-item img {
+    width: 50%;
+}

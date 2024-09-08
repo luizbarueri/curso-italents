@@ -1,12 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap');
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    
-    padding: 5px;
+  background-color: rgb(31, 11, 131);
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+
   }
 
   .header h1 {
-    color: darkgoldenrod;
-    font-size: 30px;
+    font-size: 3.2rem;
+    color: #fff;
+    font-family: "Monsieur La Doulaise", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  header p {
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
   }

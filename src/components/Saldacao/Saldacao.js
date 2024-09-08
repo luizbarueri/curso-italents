@@ -1,11 +1,10 @@
 import './saudacao.css';
 
-export default function Saldacao() {
-    var nome = "Luiz Santos"
-    const saudacao = () => `Olá meu nome é ${nome}`;
+export default function Saldacao({nome, sobrenome}) {
+    
     return(
-        <div className='altura'>
-            <h1>{saudacao()}</h1>
+        <div className='saudacao'>
+            <p>Olá, meu nome é {nome} {sobrenome}</p>
         </div>
     );
 }

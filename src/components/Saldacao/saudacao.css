@@ -1,10 +1,10 @@
-.altura {
+.saudacao {
     display: flex;
     align-items: center;
-    background-color: rgb(77, 74, 74);
     height: 50px;
 }
 
-.altura h1 {
+.saudacao h1 {
     margin-left: 10px;
+    color: #fff;
 }

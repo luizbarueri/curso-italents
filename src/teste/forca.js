@@ -1,4 +1,4 @@
-palavras = ['gato', 'cachorro', 'rato', 'tatu']
+const palavras = ['gato', 'cachorro', 'rato', 'tatu']
 
 function escolherPalavras() {
     const  p_palavra = document.getElementById('palavra')
