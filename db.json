@@ -1,0 +1,34 @@
+{
+  "movies": [
+    {
+      "id": "0",
+      "nome": "Certificado 1",
+      "poster": "Certificado1.png",
+      "anoLancamento": "2021"
+    },
+    {
+      "id": "1",
+      "nome": "Certificado 2",
+      "poster": "Certificado2.png",
+      "anoLancamento": "2022"
+    },
+    {
+      "id": "2",
+      "nome": "Certificado 3",
+      "poster": "Certificado3.png",
+      "anoLancamento": "2023"
+    },
+    {
+      "id": "5dd0",
+      "nome": "Luiz Amaro",
+      "poster": "certificado4.png",
+      "anoLancamento": "65656"
+    },
+    {
+      "id": "8886",
+      "nome": "Exterminador do futuro",
+      "poster": "https://uauposters.com.br/media/catalog/product/cache/1/thumbnail/800x930/9df78eab33525d08d6e5fb8d27136e95/5/1/510920201013-uau-posters-filmes-terminator-exterminador-do-futuro.jpg",
+      "anoLancamento": "1998"
+    }
+  ]
+}

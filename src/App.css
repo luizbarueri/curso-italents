@@ -1,3 +1,4 @@
+
 .container {
   height: 100%;
   width: 90%;
@@ -18,9 +19,21 @@
   margin-bottom: 15px;
 }
 
-.container {
-  height: 100%;
-  width: 90%;
-  display: block;
-  margin: 0 auto;
+.eventos {
+  width: 100%;
+  margin: 5px auto;
+  padding: 5px;
+  color: #fff;
+  background-color: rgb(64, 69, 67);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+.eventos h3, h4  {
+  padding: 15px;
+}
+.eventos h4  {
+  padding: 15px;
 }

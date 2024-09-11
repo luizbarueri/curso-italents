@@ -2,11 +2,16 @@ import './button.css';
 
 const Button = ({text, onClick, ...props}) => {
     return (
-        <button className='button' type = {props.type} onClick={ (event) => {
-                event.preventDefault()
-                onClick() }}>
-            {text}
-        </button>
+        <>
+            {/* {props.preventLoad()} */}
+            <button className='button' type = {props.type} onClick={(event) => {
+                event.preventDefault();
+                console.log(event);
+                onClick();
+                
+                }}>{text}</button>
+
+        </>
 
     )
 }

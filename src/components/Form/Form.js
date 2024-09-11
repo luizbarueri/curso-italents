@@ -6,7 +6,9 @@ const Form = () => {
     function handleClickSubmit() {
         console.log('Clicou no botão do formulário')
     }
-
+    function handleClickCancelar() {
+        console.log('Cancelar formulário')
+    }
     return (
         <form className='form'>
             <FormInput inputName="Nome" id="nome" type="text"/>
@@ -14,7 +16,7 @@ const Form = () => {
 
             <div className='div-botao'>
               <Button type="submit" text="Enviar" onClick={handleClickSubmit}/>
-              <Button type="button" text="cancelar"/>
+              <Button type="button" text="cancelar" onClick={handleClickCancelar}/>
             </div>
         </form>
     )

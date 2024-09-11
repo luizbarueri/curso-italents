@@ -1,67 +1,115 @@
-import { useState } from 'react';
-import './filmes.css';
-import FormInput from '../FormInout/FormInput';
 import Button from '../Button/Button';
-
+import Filme from '../Filme/Filme';
+import FormInput from '../FormInout/FormInput';
+import './filmes.css';
+import { useEffect, useState } from 'react';
 
 const Filmes = (props) => {
-    const [filmes, setFilmes] = useState([
-            {
-                nome: "logo512.png",
-                categoria: "ação",
-                ano: 2024
-            },
-            {
-                nome: "filme2.png",
-                categoria: "animado",
-                ano: 2021
-            },
-            {
-                nome: "Filme3.png",
-                categoria: "Barbara - Paris 2024",
-                ano: 2022
-            }
-        ]);
-
     
+    const [filmes, setFilmes] = useState([]);
+
+    useEffect(
+        () => {
+            getMovies();
+            console.log('executado uma vez apos construção do componente!')
+    }, [])
+
     const [filmesForm, setFilmesForm] = useState({
         nome: "",
-        categoria: "",
-        ano: ""
+        poster: "",
+        anoLancamento: ""
     })
-
     const handleFieldsChange = (event) => {
-        setFilmesForm({
-            ...filmesForm,
-            [event.target.name]: event.target.value
-        })
-        console.log({filmesForm})
-
+        setFilmesForm(
+            {
+                ...filmesForm,
+                [event.target.name]: event.target.value
+            }
+        )
+        console.log(filmesForm)
     }
-
-    const handleClick = () => {
-        setFilmes([...filmes, filmesForm])
-        console.log("Cadastrado")
-        setFilmesForm({
-            nome: "",
-            categoria: "",
-            ano: ""
-        })
+        
+    const getMovies = async () => {
+        //GET para buscar os dados em db.json
+        const response = await fetch('http://localhost:3005/movies')
+        const data = await response.json();
+        setFilmes(data);
+       
     }
+   
+    const handleClick = async () => {
+        // setFilmes([...filmes, filmesForm]);
+        const response = await fetch('http://localhost:3005/movies', {
+            method: 'POST',
+            headers: new Headers({
+                "Content-TYpe": "application/json"
+            }),
+            body: JSON.stringify(filmesForm)
+        })
+
+        const data = await response.json();
+        alert(`Filme: ${data.nome} cadastrado com sucesso!`);
+        getMovies();
+
+        setFilmesForm(
+            {
+                nome: "",
+                poster: "",
+                anoLancamento: ""
+            }
+        )
+    }
+   
+    // const handleClickRemover = () => {
+    //     console.log("Remover");
+    // }
 
     return(
         <section className='filmes'> 
+            <h2>Lista de Certificados</h2>
             <form className='form'>
-                <FormInput inputName="Nome" id="name" name="nome" type="text" value={filmesForm.nome} onChange={event => handleFieldsChange(event)}/>
-                <FormInput inputName="Categoria" id="categoria" name="categoria" type="text" value={filmesForm.categoria} onChange={event => handleFieldsChange(event)}/>
-                <FormInput inputName="Ano" id="ano" name="ano" type="text" value={filmesForm.ano} onChange={event => handleFieldsChange(event)}/>
-                <Button text="cadastrar" type="submit" onClick={handleClick}/>
+
+                <FormInput inputName="Nome" id="nome" 
+                    name="nome"
+                    type="text" 
+                    value={filmesForm.nome}
+                    onChange={ (event) => handleFieldsChange(event) }
+
+                 />
+                <FormInput inputName="Poster" id="poster" 
+                    name="poster"
+                    type="text" 
+                    value={filmesForm.poster}
+                    onChange={ (event) => handleFieldsChange(event) }
+                 />
+                <FormInput inputName="Ano" id="anoLancamento" 
+                    name="anoLancamento"
+                    type="text" 
+                    value={filmesForm.anoLancamento}
+                    onChange={ (event) => handleFieldsChange(event) }
+                />
+
+                <Button text= "Cadastrar" type="submit" onClick={handleClick}/>
+                {/* <Button text= "Remover" type="button" onClick={handleClickRemover}/> */}
             </form>
-             <section className='item-filme'>
-                {/* {<img src={filmes[0].nome} alt="Filme" width={"200px"} height={"200px"}/>} */}
-                {filmes.map(nomeFilme => <img src={nomeFilme.nome} alt="Filme" width={"200px"} height={"200px"}/>
-                )}     
-            </section>
+
+            <ul className='filmes-lista'>
+                {filmes.map((filme, index) => (
+                    <Filme filme={filme} key={index}/>
+                ))}
+            </ul>
+           
+            <div className='filme-destaque'>
+                <h2>Poster Destaque</h2>
+                {filmes.filter((filme) => filme.anoLancamento <= 1998)
+                .map((filme) => (
+                        <div>
+                            <img src={filme.poster} alt={filme.nome}/>
+                            <h4>{filme.nome}</h4>
+                            <p>{filme.anoLancamento}</p>
+                        </div>    
+                    ))}
+            </div>
         </section>
        
     )
